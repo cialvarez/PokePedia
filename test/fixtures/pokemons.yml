@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pokename: MyString
+  poketype: MyString
+  pokemoves: MyText
+  pokeweaknesses: MyText
+
+two:
+  pokename: MyString
+  poketype: MyString
+  pokemoves: MyText
+  pokeweaknesses: MyText

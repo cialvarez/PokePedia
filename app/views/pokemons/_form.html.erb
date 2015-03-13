@@ -1,0 +1,40 @@
+<%= form_for @pokemon do |f| %>
+
+  <% if @pokemon.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@pokemon.errors.count, "error") %> prevented this pokemon from being created:
+      </h2>
+      <ul>
+        <% @pokemon.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :pokename %>
+  </p>
+
+  <p>
+    <%= f.label :type %><br>
+    <%= f.text_field :poketype %>
+  </p>
+
+  <p>
+    <%= f.label :moves %><br>
+    <%= f.text_area :pokemoves %>
+  </p>
+
+  <p>
+    <%= f.label :weaknesses %><br>
+    <%= f.text_area :pokeweaknesses %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <% end %>
