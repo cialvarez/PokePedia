@@ -1,65 +1,33 @@
 <%= form_for @pokemon do |f| %>
-
-  <% if @pokemon.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@pokemon.errors.count, "error") %> prevented this pokemon from being created:
-      </h2>
-      <ul>
-        <% @pokemon.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+<div class="div_setting">
+  <div class="main">
+    <div class="sub_top">
+      <%= link_to 'Pokemon List', pokemons_path, class:"button_link left"%>
+      <%= f.submit :Save,class:"button_link right" %>
     </div>
+  <div class="sub_bottom">
+      <div class="sub_left">
+        <img src="c.png" class="pokemon_profile"/>
+        <p class="p_title add_mb10">Pokemon</p>
+        <center><%= f.text_field :pokename, class:"p_input p_border add_mb20" %></center>
+        <p class="p_title add_mb10">Trainer</p>
+        <center><input type="text" class="p_input p_border add_mb20"/></center>
+      </div>
+
+    <div class="sub_right">
+      <p class="p_title add_mt20">Types</p>
+        <%= f.text_field :poketype1, class:"p2_input p_border m_b" %>
+        <%= f.text_field :poketype2, class:"p2_input p_border m_b" %>
+
+      <p class="p_title add_mt20">Moves</p>
+        <%= f.text_field :pokemove1, class:"p2_input p_border" %>
+        <%= f.text_field :pokemove2, class:"p2_input p_border" %>
+        <%= f.text_field :pokemove3, class:"p2_input p_border m_b" %>
+        <%= f.text_field :pokemove4, class:"p2_input p_border m_b" %>
+  
+      <p class="p_title add_mt20">Weakness</p>
+        <%= f.text_field :pokeweakness1, class:"p2_input p_border m_b" %>
+        <%= f.text_field :pokeweakness2, class:"p2_input p_border m_b" %>
   <% end %>
-
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :pokename %>
-  </p>
-
-  <p>
-    <%= f.label 'type 1' %><br>
-    <%= f.text_field :poketype1 %>
-  </p>
-
-  <p>
-    <%= f.label 'type 2' %><br>
-    <%= f.text_field :poketype2 %>
-  </p>
-
-  <p>
-    <%= f.label 'move 1' %><br>
-    <%= f.text_field :pokemove1 %>
-  </p>
-
-  <p>
-    <%= f.label 'move 2' %><br>
-    <%= f.text_field :pokemove2 %>
-  </p>
-
-  <p>
-    <%= f.label 'move 3' %><br>
-    <%= f.text_field :pokemove3 %>
-  </p>
-
-  <p>
-    <%= f.label 'move 4' %><br>
-    <%= f.text_field :pokemove4 %>
-  </p>
-
-  <p>
-    <%= f.label 'weakness 1' %><br>
-    <%= f.text_field :pokeweakness1 %>
-  </p>
-
-  <p>
-    <%= f.label 'weakness 2' %><br>
-    <%= f.text_field :pokeweakness2 %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-
-  <% end %>
+  </div>
+</div>
