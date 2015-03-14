@@ -15,11 +15,16 @@ ActiveRecord::Schema.define(version: 20150313220648) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string   "pokename"
-    t.string   "poketype"
-    t.text     "pokemoves"
-    t.text     "pokeweaknesses"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "poketype1"
+    t.string   "poketype2"
+    t.string   "pokemove1"
+    t.string   "pokemove2"
+    t.string   "pokemove3"
+    t.string   "pokemove4"
+    t.string   "pokeweakness1"
+    t.string   "pokeweakness2"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
