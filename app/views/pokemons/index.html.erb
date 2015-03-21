@@ -1,32 +1,47 @@
-<h1>Pokedex</h1>
 
+
+
+<div class="pokedex-main">
+
+  <div class="pokedex_title">
+    <h1>Pokedex</h1>
+  </div>
 <head>
   <title>Pokedex</title>
+
+
+
 
 </head>
 
 
 <body>
   <%= link_to 'New Pokemon', new_pokemon_path %>
-  <table>
-    <tr>
-      <th>Pokemon</th>
-      <th>Type 1</th>
-      <th>Type 2</th>
-      <th colspan="3"></th>
-    </tr>
-
-    <% @pokemons.each do |pokemon| %>
+    <table class="pokedex_table_main">
       <tr>
-        <td><%= pokemon.pokename %></td>
-        <td><%= pokemon.poketype1 %></td>
-        <td><%= pokemon.poketype2 %></td>
-        <td><%= link_to 'Show', pokemon_path(pokemon) %></td>
-        <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
-        <td><%= link_to 'Destroy', pokemon_path(pokemon),
-                  method: :delete,
-                    data: { confirm: 'Are you sure?' } %></td>
+        <th colspan="1" class="pokedex_table_title">Image</th>
+        <th class="pokedex_table_title">Pokemon</th>
+        <th class="pokedex_table_title">Type 1</th>
+        <th class="pokedex_table_title">Type 2</th>
+        <th colspan="3" class="pokedex_table_title">Actions</th>
       </tr>
-    <% end %>
-  </table>
+
+      <% @pokemons.each do |pokemon| %>
+        <tr class="pokedex_table_element">
+          <td><%= image_tag pokemon.image_url(:thumb).to_s %></td>
+          <td><%= pokemon.pokename %></td>
+          <td><%= pokemon.poketype1 %></td>
+          <td><%= pokemon.poketype2 %></td>
+          <td><%= link_to 'Show', pokemon_path(pokemon) %></td>
+          <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
+          <td><%= link_to 'Destroy', pokemon_path(pokemon),
+                    method: :delete,
+                      data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </table>
+
+
+
 </body>
+</div>

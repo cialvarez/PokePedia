@@ -1,4 +1,5 @@
 class Pokemon < ActiveRecord::Base
+
   validates :pokename, presence: true,
                    length: { minimum: 2 }
   validates :poketype1, presence: true,
@@ -17,4 +18,5 @@ class Pokemon < ActiveRecord::Base
                     length: { minimum: 2 }
   validates :pokeweakness2, presence: true,
                     length: { minimum: 2 }
+  mount_uploader :image, ImageUploader
 end

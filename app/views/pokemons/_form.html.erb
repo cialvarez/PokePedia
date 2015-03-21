@@ -1,33 +1,28 @@
-<%= form_for @pokemon do |f| %>
-<div class="div_setting">
-  <div class="main">
-    <div class="sub_top">
+<%= form_for @pokemon, :html => {:multipart => true} do |f| %>
+
+
       <%= link_to 'Pokemon List', pokemons_path, class:"button_link left"%>
       <%= f.submit :Save,class:"button_link right" %>
-    </div>
-  <div class="sub_bottom">
-      <div class="sub_left">
-        <img src="c.png" class="pokemon_profile"/>
-        <p class="p_title add_mb10">Pokemon</p>
-        <center><%= f.text_field :pokename, class:"p_input p_border add_mb20" %></center>
-        <p class="p_title add_mb10">Trainer</p>
-        <center><input type="text" class="p_input p_border add_mb20"/></center>
+      <div class="pokemon_form_main">
+        <p>
+          <%= f.file_field :image %>
+        </p>
+
+        <p>Pokemon</p>
+        <center><%= f.text_field :pokename %></center>
+
+        <p>Types</p>
+          <%= f.text_field :poketype1 %>
+          <%= f.text_field :poketype2 %>
+
+        <p>Moves</p>
+          <%= f.text_field :pokemove1 %>
+          <%= f.text_field :pokemove2 %>
+          <%= f.text_field :pokemove3 %>
+          <%= f.text_field :pokemove4 %>
+
+        <p>Weakness</p>
+          <%= f.text_field :pokeweakness1 %>
+          <%= f.text_field :pokeweakness2 %>
       </div>
-
-    <div class="sub_right">
-      <p class="p_title add_mt20">Types</p>
-        <%= f.text_field :poketype1, class:"p2_input p_border m_b" %>
-        <%= f.text_field :poketype2, class:"p2_input p_border m_b" %>
-
-      <p class="p_title add_mt20">Moves</p>
-        <%= f.text_field :pokemove1, class:"p2_input p_border" %>
-        <%= f.text_field :pokemove2, class:"p2_input p_border" %>
-        <%= f.text_field :pokemove3, class:"p2_input p_border m_b" %>
-        <%= f.text_field :pokemove4, class:"p2_input p_border m_b" %>
-  
-      <p class="p_title add_mt20">Weakness</p>
-        <%= f.text_field :pokeweakness1, class:"p2_input p_border m_b" %>
-        <%= f.text_field :pokeweakness2, class:"p2_input p_border m_b" %>
   <% end %>
-  </div>
-</div>
